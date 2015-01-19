@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="KTX">
+  <head>
+    <title>Wordcount</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+  <body ng-controller="KTXController">
+    <div class="container">
+      <h1>Wordcount 3000</h1>
+	  <!-- notice that form don't have method of POST anymore -->
+      <form name="form" ng-submit="login()">
+		<fieldset>
+			<legend>Login</legend>
+				<input placeholder="Username" name="username" type="text" 
+					ng-model="user.username" ng-minlength=3 required> 
+				<br />
+				<input placeholder="Password" name="password" type="password"
+					ng-model="user.password" required> 
+				<br />
+				<div ng-show="user.username.length > 0">
+					Remember me
+				</div>
+				<div ng-show="form.username.$dirty && form.username.$invalid">
+					
+				</div>
+				<button type="submit" ng-disabled="form.$invalid">Log in</button>
+		</fieldset>
+	</form>	
+      <br>
+      {% for error in errors %}
+        <h4>{{ error }}</h4>
+      {% endfor %}
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
