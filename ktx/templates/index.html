@@ -12,9 +12,9 @@
   </head>
   <body ng-controller="KTXController">
     <div class="container">
-      <h1>Wordcount 3000</h1>
-	  <!-- notice that form don't have method of POST anymore -->
-      <form name="form" ng-submit="login()">
+		<h1>Wordcount 3000</h1>
+		<!-- notice that form don't have method of POST anymore -->
+		<form name="form" ng-submit="login()">
 		<fieldset>
 			<legend>Login</legend>
 				<input placeholder="Username" name="username" type="text" 
@@ -30,8 +30,9 @@
 					
 				</div>
 				<button type="submit" ng-disabled="form.$invalid">Log in</button>
+				{{ message }}
 		</fieldset>
-	</form>	
+		</form>	
       <br>
       {% for error in errors %}
         <h4>{{ error }}</h4>

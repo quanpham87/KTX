@@ -2,4 +2,6 @@
 DEBUG = True
 SECRET_KEY = 'ktx'
 
-SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://qpham:WPM1987()_@localhost/dev'
+#'mysql+mysqlconnector://root:4everwer@localhost/test'
+#'mysql+mysqlconnector://qpham:WPM1987()_@localhost/dev'
+SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:4everwer@localhost/test'
