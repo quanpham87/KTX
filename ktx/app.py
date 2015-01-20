@@ -41,11 +41,11 @@ def index():
 	
 @app.route('/logmein', methods=['POST'])
 def log_me_in():
-	data = json.loads(request.data)	
-	user = User('quan', 'pham', data['username'], data['password'])
+	data = request.values	
+	user = User('quan', 'pham', data.get('username'), data.get('password'))
 	db.session.add(user)
 	db.session.commit()
-	return 'Welcome ' + data['username'];
+	return 'Welcome ' + data.get('username');
 	
 	
 if __name__ == '__main__':
